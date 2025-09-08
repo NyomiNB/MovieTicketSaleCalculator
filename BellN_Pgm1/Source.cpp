@@ -20,6 +20,8 @@
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#include <iostream>
 #include <iostream>
 #include <cstdlib>
+#include <iomanip>
+
 using namespace std;
 
 int main() {
@@ -45,14 +47,14 @@ int main() {
 		cout << "How many adult tickets were sold: ";
 		cin >> adultTicketsSold;
 
-	cout << "How many children's tickets were sold: ";
+		cout << "How many children's tickets were sold: ";
 	cin >> childrenTicketsSold;
 ;
 grossSales = (adultTicketsSold * adultTicketCost) + childrenTicketsSold * (childrenTicketCost);
 
-	cout << "Gross Ticket Sales for '" << movieTitle << "': " << grossSales <<endl;
-	cout << "Theater New Profit: " << THEATRE_PROFIT*grossSales << endl;
-	cout << "Amount Paid to Distributor: " << (1.0 - THEATRE_PROFIT) * grossSales << endl;
+	cout << "\nGross Ticket Sales for '" << movieTitle << "': $" << fixed << setprecision(2) << grossSales << endl;
+	cout << "Theater New Profit: $" << THEATRE_PROFIT*grossSales << endl;
+	cout << "Amount Paid to Distributor: $" << fixed << (1.0 - THEATRE_PROFIT) * grossSales << endl;
 
 	return 0;
 }
